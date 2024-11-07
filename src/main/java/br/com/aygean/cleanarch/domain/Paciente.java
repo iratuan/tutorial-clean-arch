@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Paciente {
 
+    private Long id;
     private String nome;
     private LocalDate dataNascimento;
     private String genero;
@@ -12,13 +13,26 @@ public class Paciente {
     private Endereco endereco;
     private List<HistoricoMedico> historicoMedico;
 
-    public Paciente(String nome, LocalDate dataNascimento, String genero, Contato contato, Endereco endereco, List<HistoricoMedico> historicoMedico) {
+    public Paciente() {
+        // no args constructor
+    }
+
+    public Paciente(Long id, String nome, LocalDate dataNascimento, String genero, Contato contato, Endereco endereco, List<HistoricoMedico> historicoMedico) {
+        this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.genero = genero;
         this.contato = contato;
         this.endereco = endereco;
         this.historicoMedico = historicoMedico;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {

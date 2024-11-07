@@ -7,6 +7,10 @@ public class Endereco {
     private String estado;
     private String cep;
 
+    public Endereco() {
+        // no args constructor
+    }
+
     public Endereco(String rua, Integer numero, String cidade, String estado, String cep) {
         this.rua = rua;
         this.numero = numero;
@@ -54,6 +58,4 @@ public class Endereco {
     public void setCep(String cep) {
         this.cep = cep;
     }
-
-    // Getters e Setters
 }

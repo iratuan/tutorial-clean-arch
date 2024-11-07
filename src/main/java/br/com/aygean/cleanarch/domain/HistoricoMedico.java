@@ -8,6 +8,10 @@ public class HistoricoMedico {
     private String tratamento;
     private String observacoes;
 
+    public HistoricoMedico() {
+        //no args constructor
+    }
+
     public HistoricoMedico(LocalDate dataConsulta, String diagnostico, String tratamento, String observacoes) {
         this.dataConsulta = dataConsulta;
         this.diagnostico = diagnostico;
