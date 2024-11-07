@@ -1352,6 +1352,9 @@ curl -X DELETE http://localhost:8080/pacientes/{id}
 
 Essas requisições `cURL` permitem que você interaja com a API REST de pacientes usando os dados fornecidos em JSON, facilitando o teste de cada um dos métodos CRUD do `PacienteController`.
 
+### Extra: Orquestração
+![Orquestração](/images/f04_diagrama.png "Orquestração")
+
 ## Considerações finais
 
 Para finalizar este tutorial, refletimos sobre o processo de construção de uma API REST robusta seguindo a Clean Architecture e utilizando Spring Boot. Passamos por conceitos importantes de organização de código e separação de responsabilidades, o que facilita a manutenção e escalabilidade da aplicação.
