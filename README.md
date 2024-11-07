@@ -1,10 +1,12 @@
+![Arquitetura Limpa](/images/f03_capa.png "Capa")
+
 # Tutorial de clean architecture utilizando spring boot
 
 - Autor: Iratuã Júnior
 - Data: 07/11/2024
 - Versão do springboot: 3.3.5
-- Versão jdk: 18
-- [Respositorio no github](https://github.com/iratuan/tutorial-springboot-jwt)
+- Versão jdk: 17
+- [Respositorio no github](https://github.com/iratuan/tutorial-clean-arch)
 
 ## Sobre o tutorial
 Neste tutorial, abordaremos os fundamentos da Clean Architecture e demonstraremos como aplicar esse conceito no desenvolvimento de uma API REST utilizando Spring Boot. Vamos explorar a estrutura modular da Clean Architecture, destacando as camadas de domínio, aplicação, infraestrutura e interfaces. Cada seção do tutorial mostrará como organizar o código de forma a garantir independência entre camadas, facilitando a manutenção e a escalabilidade do projeto. Além disso, abordaremos práticas como a inversão de dependência e o uso de interfaces para garantir a flexibilidade e adaptabilidade da API ao longo de sua evolução, mantendo uma estrutura clara e bem definida.
@@ -113,6 +115,9 @@ spring.jpa.hibernate.ddl-auto=update
 Feito isso, já teremos a nossa aplicação configurada para acessar o banco de dados `Postgres` através do container `docker`.
 
 ## Passo 3 - Criando a estrutura de pastas do projeto
+
+![Arquitetura Limpa](/images/f02_cleanarch.png "Clean Arch")
+
 **Resumo sobre a Arquitetura Limpa:**
 
 A Arquitetura Limpa, proposta por Robert C. Martin (conhecido como Uncle Bob), é uma abordagem de design de software que enfatiza a independência e a manutenção do código. Seu principal objetivo é separar a lógica de negócio (regras e entidades) dos detalhes de implementação (frameworks, bancos de dados, interfaces de usuário), criando camadas distintas que se comunicam através de interfaces. Isso facilita a testabilidade, a escalabilidade e a adaptabilidade da aplicação, permitindo que mudanças em uma camada não afetem as demais.
