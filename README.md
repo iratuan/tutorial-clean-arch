@@ -333,7 +333,6 @@ public class Contato {
     }
 }
 
-
 ```
 Domínio: **Endereco**
 ```java
@@ -399,7 +398,6 @@ public class Endereco {
     }
 }
 
-
 ```
 Domínio: **HistoricoMedico**
 ```java
@@ -456,8 +454,6 @@ public class HistoricoMedico {
         this.observacoes = observacoes;
     }
 }
-
-
 ```
 
 Note que todas as classes são representações `planas` do  domínio e não fazem referência a `frameworks`, garantindo o isolamento da camada de domínio.
@@ -598,7 +594,6 @@ public class PacienteNotFoundException extends RuntimeException {
         super(message);
     }
 }
-
 ```
 
 ### Codificando nossa camada de infraestrutura
@@ -729,7 +724,6 @@ public class ContatoEntity {
     private String telefone;
     private String email;
 }
-
 ```
 
 **EnderecoEntity**
@@ -795,9 +789,6 @@ public class HistoricoMedicoEntity {
         this.observacoes = observacoes;
     }
 }
-
-
-
 ```
 Note que as entities tem a função de representar o mapeamento do objeto em relação ao banco de dados.
 
@@ -1012,8 +1003,6 @@ public class PacienteConverter {
             historicoMedicoEntity);
     }
 }
-
-
 ```
 ### Criando a entidade de serviço 
 
@@ -1095,8 +1084,6 @@ public class PacienteGatewayImpl implements PacienteGateway {
         }
     }
 }
-
-
 ```
 
 Explicando o funcionamento da classe `PacienteGatewayImpl`:
@@ -1201,7 +1188,6 @@ public class PacienteController {
         }
     }
 }
-
 ```
 
 ### Explicação dos Métodos CRUD
@@ -1220,6 +1206,7 @@ No pacote `main` crie a classe `BeansConfig.java` e adicione o código abaixo:
 ```java
 package br.com.aygean.cleanarch.main;
 
+import br.com.aygean.cleanarch.application.PacienteUseCase;
 import br.com.aygean.cleanarch.gateway.PacienteGateway;
 import br.com.aygean.cleanarch.infra.repository.PacienteRepository;
 import br.com.aygean.cleanarch.infra.service.PacienteGatewayImpl;
@@ -1233,8 +1220,12 @@ public class BeansConfig {
     public PacienteGateway pacienteGateway(PacienteRepository pacienteRepository) {
         return new PacienteGatewayImpl(pacienteRepository);
     }
-}
 
+    @Bean
+    public PacienteUseCase pacienteUseCase(PacienteGateway pacienteGateway) {
+        return new PacienteUseCase(pacienteGateway);
+    }
+}
 ```
 
 **Explicando a classe de configuração**
